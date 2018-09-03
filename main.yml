@@ -23,7 +23,7 @@
        - oracle-java8-set-default
 
    - name: Create Folder
-     sudo: yes
+     sudo_user: yes
      become_user: root
      file:
       path: /opt/tomcat
