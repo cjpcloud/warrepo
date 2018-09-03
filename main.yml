@@ -23,6 +23,7 @@
        - oracle-java8-set-default
 
    - name: Create Folder
+     become_user: yes
      file:
       path: /opt/tomcat
       state: directory
