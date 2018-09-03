@@ -1,7 +1,6 @@
 ---
 - hosts: localhost
   remote_user: root
-  sudo_user: yes
   become: yes
   tasks:
    - name: Install add-apt-repostory
