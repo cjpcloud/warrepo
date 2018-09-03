@@ -24,6 +24,7 @@
 
    - name: Create Folder
      become: yes
+     become_user: root
      file:
       path: /opt/tomcat
       state: directory
