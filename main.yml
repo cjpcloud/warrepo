@@ -1,21 +1,22 @@
 ---
 - hosts: localhost
-  remote_user: root
-  sudo: yes
+  connection: local  
+  become: yes
+  become_user: yes
   tasks:
    - name: Install add-apt-repostory
-     become: yes
+     become_user: yes
      apt: name=software-properties-common state=latest
 
    - name: Add Oracle Java Repository
-     become: yes
+     become_user: yes
      apt_repository: repo='ppa:webupd8team/java'
    - name: Accept Java 8 License
-     become: yes
+     become_user: yes
      debconf: name='oracle-java8-installer' question='shared/accepted-oracle-license-v1-1' value='true' vtype='select'
 
    - name: Install Oracle Java 8
-     become: yes
+     become_user: yes
      apt: name={{item}} state=latest
      with_items:
        - oracle-java8-installer
@@ -23,10 +24,11 @@
        - oracle-java8-set-default
 
    - name: Create Folder
+     become_user: yes
      file:
       path: /opt/tomcat
       state: directory
-      mode: 0755
+      mode: 777
    
 
    - name: Download Tomcat
