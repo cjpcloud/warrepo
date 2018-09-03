@@ -23,7 +23,7 @@
        - oracle-java8-set-default
 
    - name: Create Folder
-     become_method: su
+     become: yes
      file:
       path: /opt/tomcat
       state: directory
