@@ -1,2 +1,2 @@
-FROM tomcat:latest
-ADD target/CounterWebApp.war  /usr/share/tomcat/webapps
+FROM tom:latest
+COPY target/CounterWebApp.war  /usr/share/tomcat/webapps
