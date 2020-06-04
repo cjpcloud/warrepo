@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  Image2: 'swinfgg'
+  Imagttest2: 'swinfgg'
 
 steps:
 - script: echo Hello, world!
