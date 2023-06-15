@@ -1,16 +1,15 @@
 pipeline {
-    agent any 
+    agent any
     stages {
-        stage('Checkout') {
+        stage('checkout') {
             steps {
-                git credentialsId: '053668c1-5cac-4c57-8788-b444f69f73d4', url: 'https://github.com/cjpcloud/warrepo.git'
+               git 'https://github.com/cjpcloud/warrepo.git'
             }
         }
-            stage('Build'){
-                steps{
-                    sh label: '', script: '
-                }
-            }
+        stage('Build') {
+             steps {
+                  sh 'mvn clean package'
+             }
         }
-    
+    }
 }
